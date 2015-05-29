@@ -1,16 +1,20 @@
-var countUp = function(countTo, countBy) {
-  var arr = [];
-  for (var counter = countBy; counter <= countTo; counter += countBy) {
-    arr.push(counter);
-  }
-  return arr;
-};
+var findAndReplace = function(inString, findString, replaceString) {
+
+  var stringOne = inString;
+  var stringTwo = findString;
+  var stringThree = replaceString;
+
+  var res = stringOne.replace(stringTwo, stringThree);
+
+  return res;
+}
 
 $(document).ready(function() {
-  $("form#countUp").submit(function(event) {
-    var countUpTo = parseInt($("input#upTo").val());
-    var incrementBy = parseInt($("input#countBy").val());
-    var result = countUp(countUpTo, incrementBy);
+  $("form#findAndReplace").submit(function(event) {
+    var inString = $("input#stringOne").val();
+    var findString = $("input#stringTwo").val();
+    var replaceString = $("input#stringThree").val();
+    var result = findAndReplace(inString, findString, replaceString);
 
     $(".result").text(result);
 

@@ -1,9 +1,11 @@
-describe('countUp', function() {
-  it("counts by by 5 to 30", function() {
-    expect(countUp(30, 5)).to.eql([5, 10, 15, 20, 25, 30]);
+describe("findAndReplace", function() {
+
+  it("will return a string", function() {
+    expect(findAndReplace("Thing One and Thing Two", "Two", "Monster")).to.be.a("string");
   });
 
-  it("counts by 7 to 49", function() {
-    expect(countUp(50, 7)).to.eql([7, 14, 21, 28, 35, 42, 49]);
+  it("will find a word in the string and replace it with another word", function() {
+    expect(findAndReplace("the cat in the hat", "cat", "alligator")).to.equal("the alligator in the hat");
   });
+
 });
